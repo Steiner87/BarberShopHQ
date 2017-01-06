@@ -8,6 +8,7 @@ set :database,"sqlite3:barbershop.db"
 
 	class Client < ActiveRecord::Base
 		validates :name, presence: true
+		validates :phone, presence: true
 		validates :datestamp, presence: true
 	end
 
@@ -23,17 +24,18 @@ get '/' do
 	erb :index		
 end
 
-get '/visit' do 
+get '/visit' do
+	@c=Client.new 
 	erb :visit
 end
 
 post '/visit' do
 	
-	c=Client.new params[:client]
-	if c.save 
+	@c=Client.new params[:client]
+	if @c.save 
 		erb "<h2>Спасибо что вы с нами!</h2>"
 	else
-		@error = c.errors.full_messages.first
+		@error = @c.errors.full_messages.first
 		erb :visit
 	end
 

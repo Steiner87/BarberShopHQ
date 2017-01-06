@@ -12,21 +12,21 @@
   <div class="form-group">
     <label for="inputName" class="col-sm-2 control-label">Введите имя</label>
     <div class="col-sm-3">
-      <input name="client[name]" type="text" class="form-control" id="inputName" value="<%=@username%>" placeholder="Имя">
+      <input name="client[name]" type="text" class="form-control" id="inputName" value="<%=@c.name%>" placeholder="Имя">
     </div>
   </div>
 
     <div class="form-group">
     <label for="inputName" class="col-sm-2 control-label">Введите телефон</label>
     <div class="col-sm-3">
-      <input name="client[phone]" type="text" class="form-control" id="inputName" value="<%=@userphone%>" placeholder="Телефон">
+      <input name="client[phone]" type="text" class="form-control" id="inputName" value="<%=@c.phone%>" placeholder="Телефон">
     </div>
   </div>
 
       <div class="form-group">
     <label for="datetimepicker" class="col-sm-2 control-label">Выберите дату</label>
     <div class="col-sm-3">
-      <input name="client[datestamp]" type="text" class="form-control" id="datetimepicker" value="<%=@dateTime%>" placeholder="Дата">
+      <input name="client[datestamp]" type="text" class="form-control" id="datetimepicker" value="<%=@c.datestamp%>" placeholder="Дата">
     </div>
   </div>
 
