@@ -7,6 +7,8 @@ require 'sinatra/activerecord'
 set :database,"sqlite3:barbershop.db"
 
 	class Client < ActiveRecord::Base
+		validates :name, pressence: true
+		validates :datestamp, pressence: true
 	end
 
 	class Barber < ActiveRecord::Base	
