@@ -1,0 +1,42 @@
+<h1></h1>
+<p> Barber shop</p>
+<script>
+    <%#$(function () {
+        $('#datetimepicker').datetimepicker();
+    });%>
+</script>
+
+
+<form action="/visit" method="post" class="form-horizontal">
+
+  <div class="form-group">
+    <label for="inputName" class="col-sm-2 control-label">Введите имя</label>
+    <div class="col-sm-3">
+      <input name="client[name]" type="text" class="form-control" id="inputName" value="<%=@username%>" placeholder="Имя">
+    </div>
+  </div>
+
+    <div class="form-group">
+    <label for="inputName" class="col-sm-2 control-label">Введите телефон</label>
+    <div class="col-sm-3">
+      <input name="client[phone]" type="text" class="form-control" id="inputName" value="<%=@userphone%>" placeholder="Телефон">
+    </div>
+  </div>
+
+      <div class="form-group">
+    <label for="datetimepicker" class="col-sm-2 control-label">Выберите дату</label>
+    <div class="col-sm-3">
+      <input name="client[datestamp]" type="text" class="form-control" id="datetimepicker" value="<%=@dateTime%>" placeholder="Дата">
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-3">
+      <button type="submit" class="btn btn-primary">Записаться</button>
+    </div>
+  </div>
+
+  
+</form>

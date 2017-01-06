@@ -6,14 +6,27 @@ require 'sinatra/activerecord'
 
 set :database,"sqlite3:barbershop.db"
 
-class Client < ActiveRecord::Base
-end
+	class Client < ActiveRecord::Base
+	end
 
-class Barber < ActiveRecord::Base	
+	class Barber < ActiveRecord::Base	
 end
 
 
 get '/' do
-	@barber=Barber.all
 	erb :index		
+end
+
+get '/visit' do 
+	erb :visit
+end
+
+post '/visit' do
+	
+	c=Client.new params[:client]
+	c.save
+
+	
+	erb "<h2>Спасибо что вы с нами!</h2>"
+	
 end
